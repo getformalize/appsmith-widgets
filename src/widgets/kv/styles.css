@@ -1,0 +1,38 @@
+.app {
+    width: calc(1px * var(--appsmith-ui-width));
+    justify-content: start;
+    border-radius: 0px;
+    border: none;
+    padding: 16px 0;
+    gap: 16px;
+    display: flex;
+    flex-direction: column;
+    font-size: 12px;
+    height: 100%;
+    > * {
+        padding: 0 16px;
+    }
+}
+
+.key {
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: capitalize;
+    flex-shrink: 0;
+}
+
+.key.fixed {
+    width: 33%;
+    min-width: 33%;
+    flex-shrink: 0;
+}
+
+.value {
+    font-size: 12px;
+}
+
+.tag {
+    border-radius: 12px;
+    font-size: 11px;
+    text-transform: capitalize;
+}

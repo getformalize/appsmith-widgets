@@ -1,0 +1,83 @@
+.app {
+    width: calc(1px * var(--appsmith-ui-width));
+    justify-content: center;
+    border-radius: 0px;
+    border: none;
+}
+
+.ant-card {
+    padding: 12px;
+    box-shadow: inherit !important;
+    background: inherit !important;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    .ant-card-head {
+        border: none;
+        padding: 4px;
+        min-height: 0;
+    }
+    .ant-card-body {
+        padding: 4px;
+        border-radius: 0;
+    }
+}
+
+.ant-collapse-header {
+    flex-direction: row-reverse;
+    padding: 12px !important;
+    align-items: center !important;
+}
+
+.ant-collapse-content-box {
+    padding: 0 12px 12px !important;
+}
+
+.ant-collapse-expand-icon {
+    padding-inline-end: 0 !important;
+}
+
+.group {
+    font-size: 12px !important;
+    font-weight: 600 !important;
+    margin-bottom: 0 !important;
+}
+
+.ant-tag {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    color: #18181B
+}
+
+.ant-tag.unverified {
+    background:#FEE2E2;
+    color: #7F1D1D;
+    padding-left:6px !important;
+    padding-right:6px !important
+}
+
+.ant-tag.verified {
+    background: #F4F4F5;
+    padding-left:6px !important;
+    padding-right:6px !important
+}
+
+.title {
+    font-size: 12px;
+    color: #71717A
+}
+
+.description {
+    font-size: 12px;
+}
+
+.ant-collapse-item-active {
+    .ant-collapse-expand-icon {
+        transform: rotate(90deg);
+    }
+}
+
+.ant-collapse-expand-icon {
+    transition: 0.2s all ease;
+}

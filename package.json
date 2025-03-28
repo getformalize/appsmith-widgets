@@ -1,0 +1,30 @@
+{
+  "name": "appsmith-widgets",
+  "version": "1.0.0",
+  "description": "Custom widgets for Appsmith",
+  "main": "dist/appsmith-widgets.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "clean": "rm -rf dist",
+    "build": "npm run clean && esbuild src/index.tsx --bundle --minify --sourcemap --format=esm --loader:.css=text --outfile=dist/appsmith-widgets.js && tsc --emitDeclarationOnly --outDir dist && cp examples/* dist/",
+    "dev": "esbuild src/index.tsx --bundle --sourcemap --format=esm --loader:.css=text --outfile=dist/appsmith-widgets.js --watch",
+    "type-check": "tsc --noEmit",
+    "serve": "npx http-server -p 3000 --cors='*' dist",
+    "tunnel": "cloudflared tunnel --url http://localhost:3000",
+    "build-serve-tunnel": "npm run build && (npm run serve & npm run tunnel)"
+  },
+  "license": "proprietary",
+  "dependencies": {
+    "antd": "^5.24.5",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.13.14",
+    "@types/react": "^19.0.12",
+    "@types/react-dom": "^19.0.4",
+    "esbuild": "^0.25.1",
+    "http-server": "^14.1.1",
+    "typescript": "^5.8.2"
+  }
+}

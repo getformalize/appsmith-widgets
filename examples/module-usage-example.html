@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Appsmith Widgets Usage</title>
+</head>
+<body>
+  <div id="root"></div>
+
+  <script type="module">
+    // Import the widgets from your hosted location
+    import { KVWidget, ChecklistWidget, initializeWidget } from './appsmith-widgets.js';
+    
+    // Add a widget selector
+    const widget = new URLSearchParams(window.location.search).get('widget') || 'kv';
+    
+    // Mock Appsmith global for demo purposes
+    window.appsmith = {
+      model: {},
+      onReady: (callback) => setTimeout(callback, 0),
+      onModelChange: () => {},
+      triggerEvent: () => {}
+    };
+    
+    // Add mock data for widgets
+    if (widget.toLowerCase() === 'checklist') {
+      window.appsmith.model = {
+        data: [
+          { name: "Entity status", done: true, group: "KYB Rules" },
+          { name: "Entity Identification", done: true },
+          { name: "Legal Representative Identification", done: true },
+          { name: "Bank Account Verified", done: false },
+          { name: "Bank Account Name Match", done: true }
+        ],
+        label: "Demo Checklist"
+      };
+      initializeWidget(ChecklistWidget);
+    } else {
+      window.appsmith.model = {
+        data: {
+          id: 123,
+          firstName: "John",
+          lastName: "Doe",
+          email: "john@example.com",
+          website: "https://example.com",
+          createdAt: new Date().toISOString(),
+          tags: ["User", "Admin", "Developer"],
+          active: true
+        },
+        layout: "row",
+        labelPlacement: "left",
+        noOfColumnsPerRow: 2
+      };
+      initializeWidget(KVWidget);
+    }
+  </script>
+</body>
+</html>
