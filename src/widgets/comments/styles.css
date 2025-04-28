@@ -1,0 +1,45 @@
+.app {
+    width: calc(1px * var(--appsmith-ui-width));
+    justify-content: start;
+    border-radius: 0px;
+    border: none;
+    padding: 16px 0;
+    gap: 16px;
+    display: flex;
+    flex-direction: column;
+    font-size: 12px;
+    > * {
+        padding: 0 16px;
+    }
+    .title {
+        font-size: 14px !important;
+    }
+    .footer {
+        display: flex;
+        flex-direction: column;
+        gap: 16px
+    }
+}
+.ant-list {
+    width: 100%;
+    height: calc(100% - 100px);
+    overflow-y: auto;
+}
+
+.ant-list-item {
+    align-items: start !important;
+}
+
+.timestamp {
+    height: 100%;
+    font-size: 11px;
+    color: #a1a1aa;
+}
+
+.ant-list-item-meta-title {
+    font-size: 12px !important;
+}
+
+.ant-list-item-meta-description {
+    font-size: 12px !important;
+}

@@ -2,9 +2,10 @@ import React from 'react';
 import { createRoot } from 'react-dom/client';
 import KVWidget from './widgets/kv/KVWidget';
 import ChecklistWidget from './widgets/checklist/ChecklistWidget';
+import CommentWidget from './widgets/comments/CommentWidget';
 
 // Export all widgets
-export { KVWidget, ChecklistWidget };
+export { KVWidget, ChecklistWidget, CommentWidget };
 
 // Helper function to inject CSS styles
 function injectStyles(cssText: string, widgetName: string) {
